@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Grafika funky feladat</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <style>
+canvas {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+  margin: 20px 0;
+}
+#wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+h1,h2,h3,h4 {
+  text-align: center;
+  font-weight: 300;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 14px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  height: 100%;
+}
+#controls {
+  margin: 0px auto;
+  width: 320px;
+}
+label {
+  display: block;
+  width: 120px;
+  text-align: right;
+  line-height: 40px;
+  float: left;
+}
+input {
+  height: 40px;
+  display: block;
+  float: left;
+  width: 200px;
+}
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 0.8em;
+}
+p {
+  width: 800px;
+  margin: 0px auto;
+  margin-top: 5px;
+  text-align: justify;
+  line-height: 1.5;
+}
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Grafika funky feladat!</h1>
+      <h2><strong>TL;DR</strong> kattint, örül. Egyébként tudnivalók alul</h2> 
+      <div id="controls">
+        <label for="tension">Tenzió:</label><input type="range" id="tension" min="-2" max="2" step="0.01" value="-0.5" /><br />
+        <label for="bulletTime">Bullet time:</label><input type="range" id="bulletTime" min="0.5" max="10" step="0.1" value="1" /><br />
+      </div>
+      <canvas id="canvas" width="1200" height="600">Nincs kanvászod :-(</canvas>
+      <p>Bal gombbal leraksz egy pontyot, jobb gombal arrébb cipeled. A paraméterezést a jobb oldal tetején lévő egyenesen változtathatod, szintén a bogyókat kell jobb gombbal hurcolászni.
+      <p>A kontrollpontyok szürkével össze vannak kötögetve, feketével a megadott tenziójú CR görbe van kirajzolva, illetve kékkel egy mezei Bezier.
+      <p>A görbén megy egy nagy bogyó, ez a görbe adott időponthoz tartozó pontya, zölddel ki van rajzolva a görbe első deriváltja, illetve pirossal a második.
+      <p>Jobb oldalon a görbe paraméterezése látszik, a fekete vonalon az egyes pontyok, illetve a hozzájuk tartozó paraméterértékek láthatóak, alatta világos zölddel a görbe deriváltjának abszolútértéke van felrajzolva (a paraméter függvényében), illetve pirossal a görbe második deriváltja.
+      <p>Végül az egyes pontok súlyfüggvénye is fel van rajzolva (a paraméter függvényében), egyébként ennek megfelelően változik a pontokban lévő körök sugara (illetve színe).
+      </p>
+    </div>
+    <script src="/main.min.js"></script>
+  </body>
+</html>
